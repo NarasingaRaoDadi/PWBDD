@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sample Test Page</title>
+</head>
+<body>
+    <h1>Sample Login Page</h1>
+
+    <form id="loginForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" /><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" /><br><br>
+
+        <label for="listbox">Select Option:</label>
+        <select id="listbox" name="listbox">
+            <option value="">Select</option>
+            <option value="Option1">Option 1</option>
+            <option value="Option2">Option 2</option>
+        </select><br><br>
+
+        <input type="checkbox" id="subscribe" name="subscribe" />
+        <label for="subscribe">Subscribe to newsletter</label><br><br>
+
+        <input type="radio" id="male" name="gender" value="male" />
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female" />
+        <label for="female">Female</label><br><br>
+
+        <button type="button" id="loginButton">Login</button>
+    </form>
+
+    <div id="popup" style="display:none; border:1px solid black; padding:10px; margin-top:20px;">
+        <p>This is a popup message!</p>
+        <button onclick="document.getElementById('popup').style.display='none'">Close</button>
+    </div>
+
+    <iframe id="sampleIframe" srcdoc="<p>Iframe content here</p>" style="width:300px; height:100px; border:1px solid grey;"></iframe><br><br>
+
+    <table id="sampleTable" border="1" style="width:50%;">
+        <thead>
+            <tr><th>Name</th><th>Age</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>John</td><td>28</td></tr>
+            <tr><td>Jane</td><td>32</td></tr>
+        </tbody>
+    </table>
+
+    <br>
+    <input type="file" id="fileUpload" />
+    <br><br>
+    <a href="https://www.example.com/samplefile.txt" download id="fileDownload">Download Sample File</a>
+
+    <script>
+        document.getElementById('loginButton').addEventListener('click', () => {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            if(username === 'username' && password === 'password'){
+                alert('Login Successful');
+            } else {
+                alert('Invalid Credentials');
+            }
+        });
+    </script>
+</body>
+</html>
